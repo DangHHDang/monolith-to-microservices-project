@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: frontend
   labels:
     service: frontend
-  name: frontend
 spec:
   replicas: 1
   selector:
@@ -15,16 +15,16 @@ spec:
         service: frontend
     spec:
       containers:
-        - image: dangdang511/udagram-frontend:v3
-          name: frontend
-          imagePullPolicy: Always
-          ports:
-          - containerPort: 80
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
-            limits:
-              memory: "1024Mi"
-              cpu: "500m"
+      - image: dangdang511/udagram-frontend:v8
+        name: frontend
+        imagePullPolicy: Always          
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"                
       restartPolicy: Always

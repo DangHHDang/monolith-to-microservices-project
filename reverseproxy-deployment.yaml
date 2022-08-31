@@ -15,7 +15,7 @@ spec:
         app: reverseproxy
     spec:
       containers:
-      - name: reverseproxy
-        image: dangdang511/udagram-reverseproxy:v3
-        ports:
-        - containerPort: 8080
+        - name: reverseproxy
+          image: dangdang511/udagram-reverseproxy:v4
+          ports:
+          - containerPort: 8080

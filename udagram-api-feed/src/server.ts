@@ -31,7 +31,7 @@ import {V0_FEED_MODELS} from './controllers/v0/model.index';
     ],
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
     preflightContinue: true,
-    origin: config.url,
+    origin: '*',
   }));
 
   app.use('/api/v0/', IndexRouter);
@@ -44,7 +44,7 @@ import {V0_FEED_MODELS} from './controllers/v0/model.index';
 
   // Start the Server
   app.listen( port, () => {
-    console.log( `server running ${config.url}` );
+    console.log( `server running ${config.url} ${config.aws_region} ${config.aws_media_bucket}` );
     console.log( `press CTRL+C to stop server` );
   } );
 })();
